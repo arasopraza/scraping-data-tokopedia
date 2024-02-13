@@ -44,7 +44,7 @@ async function getProducts(keyword, filename) {
 
     const productElements = document.querySelectorAll('.prd_link-product-name.css-3um8ox');
     const productNames = Array.from(productElements).map(name =>
-      name.innerText.trim().replace(',',)
+      name.innerText.trim()
     );    
 
     const ratingElements = document.querySelectorAll('div.prd_shop-rating-average-and-label > span.prd_rating-average-text');
@@ -69,7 +69,7 @@ async function getProducts(keyword, filename) {
       const discount = productDiscounts[i] !== undefined ? productDiscounts[i] : 0;
 
       result.push({
-        name: name[i],
+        name: productNames[i],
         rating: productRatings[i],
         location: productLocations[i],
         shop: productShops[i],
